@@ -43,9 +43,9 @@ const ProductScreen = (props) => {
                             <Card.Subtitle className="mb-2 text-muted">$ {product.price}</Card.Subtitle>
                             <Card.Text>
                                 {product.countInStock > 0 ?(
-                                    <span className="success"> In Stock</span>
+                                    <span className="success">In Stock</span>
                                 ) : (
-                                    <span className="error"> Unavalible</span>
+                                    <span className="error">Unavalible</span>
                                 )}
                             </Card.Text>
                             <Card.Link href="#">Add to Cart</Card.Link>
