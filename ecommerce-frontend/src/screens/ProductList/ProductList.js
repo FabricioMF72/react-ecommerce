@@ -5,9 +5,9 @@ import Row from 'react-bootstrap/Row'
 import "./ProductList.css"
 const ProductList = () => {
     return (
-        <Row>
+        <Row className="row-productlist">
             {data.products.map((product)=> (
-                    <ProductCard name={product.name} image={product.image} desc={product.desc} />
+                    <ProductCard name={product.name} image={product.image} desc={product.desc} rating={product.rating} numReviews={product.numReviews} id={product._id} />
                 ))
             }
         </Row>

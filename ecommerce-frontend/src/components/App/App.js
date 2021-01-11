@@ -4,21 +4,25 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import Layout from "../Layout/Layout"
 import ProductList from "../../screens/ProductList"
+import ProductScreen from "../../screens/ProductScreen"
 function App() {
   return (
     <React.Fragment>
-      <Header/>
-      <Layout>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={ProductList} />
-            <Route path="/about" component={ProductList} />
-            <Route path="/contact" component={ProductList} />
-            <Route component={ProductList} />
-          </Switch>
-        </Router>
-      </Layout>
-      <Footer/>
+      <Router>
+        <Header/>
+        <Layout>
+          
+            <Switch>
+              <Route exact path="/" component={ProductList} />
+              <Route path="/about" component={ProductList} />
+              <Route path="/product/:id" component={ProductScreen} />
+              <Route path="/contact" component={ProductList} />
+              <Route component={ProductList} />
+            </Switch>
+          
+        </Layout>
+        <Footer/>
+      </Router>
     </React.Fragment>
   );
 }
