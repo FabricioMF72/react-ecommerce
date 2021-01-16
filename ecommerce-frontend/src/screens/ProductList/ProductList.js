@@ -1,6 +1,5 @@
 import React, { useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
 import ProductCard from '../../components/ProductCard/ProductCard';
 import Row from 'react-bootstrap/Row';
 import LoadingBox from '../../components/LoadingBox/LoadingBox'
