@@ -1,11 +1,12 @@
   
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/col";
 import Image from "react-bootstrap/Image";
 import "./ProductScreen.css";
 import Rating from "../../components/Rating/Rating";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 import LoadingBox from "../../components/LoadingBox/LoadingBox";
 import MessageBox from "../../components/MessageBox/MessageBox";
 import { Link } from "react-router-dom";
@@ -14,12 +15,18 @@ import { detailsProduct } from "../../actions/productActions";
 const ProductScreen = (props) => {
     const dispatch = useDispatch();
     const productId = props.match.params.id;
+    const [qty, setQty] = useState(1)
     const productDetail = useSelector((state) => state.productDetail);
     const { loading, error, product } = productDetail;
   
     useEffect(() => {
       dispatch(detailsProduct(productId));
     }, [dispatch, productId]);
+
+    const addToCartHandler = () => {
+        props.history.push(`/cart/${productId}?qty=${qty}`)
+    }
+
     return (
             <div>
                 {loading ? (
@@ -51,7 +58,27 @@ const ProductScreen = (props) => {
                                         <Card.Title>Price</Card.Title>
                                         <Card.Subtitle className="mb-2 text-muted">$ {product.price}</Card.Subtitle>
                                         <Card.Text>{product.countInStock > 0 ? <span className="success">In Stock</span> : <span className="danger">Unavalible</span>}</Card.Text>
-                                        <Card.Link href="#">Add to Cart</Card.Link>
+                                        <Card.Text>
+                                            {
+                                                product.countInStock > 0 && (
+                                                    <>
+                                                        <div className="row">
+                                                            <div>Qty</div>
+                                                            <div>
+                                                                <select value={qty} onChange={e=> setQty(e.target.value) }>
+                                                                    {
+                                                                        [...Array(product.countInStock).keys()].map( x => (
+                                                                            <option key={x + 1}value= {x + 1} >{x + 1}</option>
+                                                                        ))
+                                                                    }
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <Button onClick={addToCartHandler} variant="light">Add to Cart</Button>
+                                                    </>
+                                                )
+                                            }
+                                        </Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Col>

@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer"
 import Layout from "../Layout/Layout"
 import ProductList from "../../screens/ProductList"
 import ProductScreen from "../../screens/ProductScreen"
+import CartScreen from "../../screens/CartScreen/CartScreen";
 function App() {
   return (
     <React.Fragment>
@@ -14,6 +15,7 @@ function App() {
           
             <Switch>
               <Route exact path="/" component={ProductList} />
+              <Route path="/cart/:id?" component={CartScreen}></Route>
               <Route path="/about" component={ProductList} />
               <Route path="/product/:id" component={ProductScreen} />
               <Route path="/contact" component={ProductList} />
