@@ -1,7 +1,7 @@
   
 import React, { useEffect, useState } from 'react';
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/col";
+import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "./ProductScreen.css";
 import Rating from "../../components/Rating/Rating";
