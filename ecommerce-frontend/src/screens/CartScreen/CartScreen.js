@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import {useDispatch, useSelector} from 'react-redux'
-import { addToCart } from '../../actions/cartAction';
+import { addToCart, removeFromCart } from '../../actions/cartAction';
 import { Link } from 'react-router-dom'
 const CartScreen = (props) => {
     const productId = props.match.params.id;
@@ -23,7 +23,7 @@ const CartScreen = (props) => {
     },[dispatch,productId,qty]);
 
     const removeFromCartHandler = (id) => {
-        // delete action
+        dispatch(removeFromCart(id));
       };
 
     const checkoutHandler = () => {
@@ -35,7 +35,7 @@ const CartScreen = (props) => {
             <Row>
                 <Col sm={8}>
                     {
-                        cartItems === 0? <MessageBox>
+                        cartItems.length === 0? <MessageBox>
                             Cart is empty. <Link to="/">Go Shopping</Link>
                         </MessageBox>
                         :
