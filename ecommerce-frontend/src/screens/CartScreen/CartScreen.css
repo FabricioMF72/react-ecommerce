@@ -2,3 +2,8 @@
     height: auto;
     width: auto;
 }
+
+.img-mini{
+    max-width: 50px;
+    max-height: 50px;
+}

@@ -4,23 +4,37 @@ import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Form from 'react-bootstrap/Form'
 import FormControl from 'react-bootstrap/FormControl'
+import Badge from 'react-bootstrap/Badge'
 import Button from 'react-bootstrap/Button'
 import { Link } from 'react-router-dom';
 import "./Header.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useSelector } from 'react-redux'
 
 const Header = () => {
+    const cart = useSelector((state => state.cart));
+    const { cartItems } = cart;
+
     return (
         <Navbar bg="light" expand="lg" className="header-navbar">
-            <Navbar.Brand href="#home">NIKE</Navbar.Brand>
+            <Navbar.Brand>NIKE</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link href="home">
+                <Nav.Link>
                     <Link to={`/`}>
-                        Home
+                    <span>Home</span>
                     </Link></Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link>
+                    <Link to={`/`}>
+                        <span>Cart</span>
+                        {
+                            cartItems.length > 0 && (
+                                <Badge variant="light">{cartItems.length}</Badge>
+                            )
+                        }
+                    </Link>
+                </Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
