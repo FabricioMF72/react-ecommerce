@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import {useDispatch, useSelector} from 'react-redux'
-import { addToCart, removeFromCart } from '../../actions/cartAction';
+import { addToCart, removeFromCart } from '../../actions/cartActions';
 import { Link } from 'react-router-dom'
 const CartScreen = (props) => {
     const productId = props.match.params.id;
