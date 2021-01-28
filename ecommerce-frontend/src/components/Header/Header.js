@@ -20,6 +20,7 @@ const Header = () => {
     const dispatch = useDispatch();
     const signoutHandler = () => {
         dispatch(signout());
+        console.log("HOLA")
     };
     return (
         <Navbar bg="light" expand="lg" className="header-navbar">
@@ -41,38 +42,33 @@ const Header = () => {
                         }
                     </Link>
                 </Nav.Link>
-                <NavDropdown title={
-                        userInfo ? (
-                            <Link to="#">
-                                {
-                                    userInfo.name
-                                }
-                            </Link>
-                        ) :
-                        <Link to="/signin">
-                            Sign In 
-                        </Link>
-                    } id="basic-nav-dropdown">
+                {
+                    userInfo ? (
+                        <NavDropdown title={
+                                <Link to="#">
+                                    {
+                                        userInfo.name
+                                    }
+                                </Link>
+                        } id="basic-nav-dropdown">
+                                <Link to="#signout" onClick={signoutHandler}>
+                                    <NavDropdown.Item href="#signout">
+                                        
+                                                Sign Out
+                                        
+                                    </NavDropdown.Item>
+                                </Link> 
+                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+    
+                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>                       
 
-                    {userInfo ? (
-                        <>
-                            <Link to="#signout" onClick={signoutHandler}>
-                                <NavDropdown.Item to="#signout" onClick={signoutHandler}>
-                                   <Link to="#signout" onClick={signoutHandler}>Sign Out</Link> 
-                                </NavDropdown.Item>
-                             </Link>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        </>
-                        ) 
-                            
-                        :
-                        
-                        <>
-                        </>
-                    }
-                </NavDropdown>
+                    </NavDropdown>
+                    ) :
+                    <Link to="/signin">
+                        Sign In 
+                    </Link>
+                }
+                
                 </Nav>
                 <Form inline>
                 <FormControl type="text" placeholder="Search" className="mr-sm-2" />
