@@ -8,6 +8,7 @@ import ProductScreen from "../../screens/ProductScreen"
 import CartScreen from "../../screens/CartScreen/CartScreen";
 import SigninScreen from "../../screens/SigninScreen/SigninScreen";
 import RegisterScreen from "../../screens/RegisterScreen/RegisterScreen";
+import ShippingAddressScreen from "../../screens/ShippingAddressScreen/ShippingAddressScreen";
 function App() {
   return (
     <React.Fragment>
@@ -22,6 +23,7 @@ function App() {
               <Route path="/product/:id" component={ProductScreen} />
               <Route path="/signin" component={SigninScreen} />
               <Route path="/register" component={RegisterScreen} />
+              <Route path="/shipping" component={ShippingAddressScreen} />
               <Route path="/contact" component={ProductList} />
               <Route component={ProductList} />
             </Switch>
