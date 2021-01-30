@@ -44,11 +44,11 @@ const ShippingAddressScreen = (props) => {
             </Form.Group>
             <Form.Group controlId="postalCode">
                 <Form.Label>Postal Code</Form.Label>
-                <Form.Control type="text" id="postalCode" value={fullName} onChange={(e) => setPostalCode(e.target.value)} required placeholder="Enter postal Code" />
+                <Form.Control type="text" id="postalCode" value={postalCode} onChange={(e) => setPostalCode(e.target.value)} required placeholder="Enter postal Code" />
             </Form.Group>
             <Form.Group controlId="country">
                 <Form.Label>Country</Form.Label>
-                <Form.Control type="text" id="country" value={fullName} onChange={(e) => setCountry(e.target.value)} required placeholder="Enter country" />
+                <Form.Control type="text" id="country" value={country} onChange={(e) => setCountry(e.target.value)} required placeholder="Enter country" />
             </Form.Group>
             <Button variant="primary" type="submit">
                 Continue

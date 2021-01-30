@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
@@ -9,6 +9,7 @@ import CartScreen from "../../screens/CartScreen/CartScreen";
 import SigninScreen from "../../screens/SigninScreen/SigninScreen";
 import RegisterScreen from "../../screens/RegisterScreen/RegisterScreen";
 import ShippingAddressScreen from "../../screens/ShippingAddressScreen/ShippingAddressScreen";
+import PaymentMethodScreen from "../../screens/PaymentMethodScreen/PaymentMethodScreen";
 function App() {
   return (
     <React.Fragment>
@@ -24,6 +25,7 @@ function App() {
               <Route path="/signin" component={SigninScreen} />
               <Route path="/register" component={RegisterScreen} />
               <Route path="/shipping" component={ShippingAddressScreen} />
+              <Route path="/payment" component={PaymentMethodScreen} />
               <Route path="/contact" component={ProductList} />
               <Route component={ProductList} />
             </Switch>
