@@ -10,6 +10,7 @@ import SigninScreen from "../../screens/SigninScreen/SigninScreen";
 import RegisterScreen from "../../screens/RegisterScreen/RegisterScreen";
 import ShippingAddressScreen from "../../screens/ShippingAddressScreen/ShippingAddressScreen";
 import PaymentMethodScreen from "../../screens/PaymentMethodScreen/PaymentMethodScreen";
+import PlaceOrderScreen from "../../screens/PlaceOrderScreen/PlaceOrderScreen";
 function App() {
   return (
     <React.Fragment>
@@ -19,12 +20,13 @@ function App() {
           
             <Switch>
               <Route exact path="/" component={ProductList} />
-              <Route path="/cart/:id?" component={CartScreen}></Route>
+              <Route path="/cart/:id?" component={CartScreen}/>
               <Route path="/about" component={ProductList} />
               <Route path="/product/:id" component={ProductScreen} />
               <Route path="/signin" component={SigninScreen} />
               <Route path="/register" component={RegisterScreen} />
               <Route path="/shipping" component={ShippingAddressScreen} />
+              <Route path="/placeorder" component={PlaceOrderScreen}/>
               <Route path="/payment" component={PaymentMethodScreen} />
               <Route path="/contact" component={ProductList} />
               <Route component={ProductList} />

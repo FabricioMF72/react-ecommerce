@@ -1,4 +1,8 @@
-.footer{
-    background-color: black;
-    color: blanchedalmond;
+.footer {
+    background-color: #203040;
+    color: #ffffff;
+  }
+
+.card{
+    width:80%;
 }
