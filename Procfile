@@ -1,0 +1,1 @@
+web: node --experimental-modules ecommerce-backend/server.js

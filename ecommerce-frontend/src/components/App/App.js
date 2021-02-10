@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer"
 import Layout from "../Layout/Layout"
 import ProductList from "../../screens/ProductList"
 import ProductScreen from "../../screens/ProductScreen"
+import OrderScreen from '../../screens/OrderScreen';
 import CartScreen from "../../screens/CartScreen/CartScreen";
 import SigninScreen from "../../screens/SigninScreen/SigninScreen";
 import RegisterScreen from "../../screens/RegisterScreen/RegisterScreen";
@@ -24,6 +25,7 @@ function App() {
               <Route path="/about" component={ProductList} />
               <Route path="/product/:id" component={ProductScreen} />
               <Route path="/signin" component={SigninScreen} />
+              <Route path="/order/:id" component={OrderScreen}></Route>
               <Route path="/register" component={RegisterScreen} />
               <Route path="/shipping" component={ShippingAddressScreen} />
               <Route path="/placeorder" component={PlaceOrderScreen}/>
